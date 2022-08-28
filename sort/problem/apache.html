@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<!--
+
+-->
+<html>
+	<head>
+		<title>个人知识记录@怎么重启apache？</title>
+        <link rel='icon' href='../../images/pic.ico ' type=‘image/x-ico’ /> <!-- 头部小图标 -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- One -->
+			<section id="one" class="main style1">
+				<div class="container">
+					<header class="major special">
+						<h2>怎么重启apache？</h2>
+					</header>
+
+					<section>
+						<p>
+                        windows下重启Apache<br><br>
+                        ● 首先右击“此电脑”，点击“管理”；<br><br>
+                        ● 在打开的“计算机管理”程序中，双击“服务和应用程序”。<br><br>
+                        ● 在打开的“计算机管理”程序中，双击“服务”。<br><br>
+                        ● 在所有的服务列表中，点击“apache”；<br><br>
+                        ● 如果apache未启动，左边显示“启动服务”，点击就会启动服务<br><br>
+                        ● 如果apache已启动，左边显示“停止和重启动服务”，点击就会执行操作<br><br>
+                        Linux下重启Apache<br><br>
+                        假设当前Linux用户的apahce安装目录为/usr/local/apache2，那么在命令行终端中使用以下命令启动，停止和重启apache。<br><br>
+                        1. 启动apahce的命令：<br><br>
+                        <code>/usr/local/apache2/bin/apachectl start apache</code><br><br>
+                        2. 停止apache的命令：<br><br>
+                        <code>/usr/local/apache2/bin/apachectl stop</code><br><br>
+                        3. 重启apache的命令：<br><br>
+                        <code>/usr/local/apache2/bin/apachectl restart</code><br><br>
+                        要在重启 Apache 服务器时不中断当前的连接，则应运行：<br><br>
+                        <code>/usr/local/sbin/apachectl graceful</code><br><br> 
+                        如果当前用户的apache已经安装为linux的服务的话，可以使用以下命令进行以上操作。<br><br>
+                        1. 启动apache<br><br>
+                        <code>service httpd start</code><br><br> 
+                        2. 停止服务apache<br><br>
+                        <code>service httpd stop</code><br><br>
+                        3. 重新启动apache<br><br>
+                        <code>service httpd restart</code><br><br>
+                        </p>
+                    </section>
+
+				</div>
+			</section>
+		
+		<!-- Footer -->
+			<section id="footer">
+                <p>
+                <a href="#" onClick="javascript :history.go(-1);">回到上页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://xmlcy.github.io">回到首页</a>
+                <p>
+				<ul class="copyright">
+					<li><a href="http://www.beian.miit.gov.cn" target="_blank">赣ICP备190133545</a></li>
+				</ul>
+			</section>
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+	</body>
+</html>

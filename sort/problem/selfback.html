@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<!--
+
+-->
+<html>
+	<head>
+		<title>个人知识记录@怎么设置自动返回？</title>
+        <link rel='icon' href='../../images/pic.ico ' type=‘image/x-ico’ /> <!-- 头部小图标 -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- One -->
+			<section id="one" class="main style1">
+				<div class="container">
+					<header class="major special">
+						<h2>怎么设置自动返回？</h2>
+					</header>
+
+					<section>
+						<p>
+                        网页自动跳转，是指当用户访问某个网页时，被自动跳转到另一个网页中去。<br><br>
+                        网页自动跳转的主要作用是，当域名变更后，或者网站里的一个或多个网页被删除后，可以使用这种方式将用户引导到其它正常的网页中去，从而留住用户。<br><br>
+                        不过，现在有许多人利用网页自动跳转来进行作弊，欺骗搜索引擎，从而实现提高网站搜索引擎排名的目的。<br><br>
+                        比较典型的方式是：先做一个“桥页”，当搜索引擎收录了这个桥页，并有较高排名时，桥页中再使用网页自动跳转方式，将用户引导到用户本来无意访问的其它网页中去。<br><br>
+                        下面介绍一下五种常见的网页自动跳转方法，以及搜索引擎对这些跳转方法的辨识能力。<br><br>
+                        第一种网页自动跳转方法：meta refresh自动跳转法 <br><br>
+                        在网页的head区域的meta refresh标签中，加入自动跳转代码，可实现网页的立即或延时自动跳转。 <br><br>
+                        示例如下：<br><br> 
+                        <code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;10;url= http://xfbbs.com/ &quot;&gt;</code><br><br>
+                        上述html代码中的“10”是延时跳转的时间，单位是秒。如果设为0，就表示立即跳转。<br><br>
+                        “ http://xfbbs.com ”是跳转的目标地址，可以是同一域名下的站内相对路径，也可以是不同域名的站外地址。 <br><br>
+                        由于搜索引擎能够读取html，所以对于这种自动跳转方法，搜索引擎是能够自动检测出来的。 <br><br>
+                        被视为作弊，则主要看跳转时间。如果跳转时间为0，就可能会被视为作弊，从而受到惩罚。如果有时间延迟（一般3秒以上），就会被视为正常应用。<br><br>
+                        第二种网页自动跳转方法：body onload自动跳转法 <br><br>
+                        在网页加载时通过onload事件指定parent.location进行自动跳转。 <br><br>
+                        示例如下：<br><br>
+                        <code>&lt;body onload=&quot;parent.location=&#x27; http://xfbbs.com&#x27; &quot;&gt;</code><br><br>
+                        这种方法与第一种方法一样，能够被搜索引擎识别。<br><br>
+                        第三种网页自动跳转方法：javascript自动跳转法 <br><br>
+                        javascript可以实现网页的自动跳转，如果要实现立即跳转，将跳转代码放在网页的head区域即可。<br><br>
+                        示例如下： <br><br>
+                        <code>&lt;script language=&quot;javascript&quot;&gt; location.replace(&quot; http://xfbbs.com/yule/tietu/ &quot;) &lt;/script&gt; </code><br><br>
+                        其中的“ http://xfbbs.com/yule/tietu/ ”是重定向目标地址。<br><br>
+                        由于搜索引擎无法解析javascript，所以搜索引擎便无法识别用javascript脚本进行的自动跳转。<br><br>
+                        第四种网页自动跳转方法：表单自动跳转法<br><br>
+                        对于表单大家都很熟悉，就是将表单中填写的内容，提交到action参数中指定的url地址中，目标url再对接收到的数据进行处理。<br><br>
+                        利用这一点，我们可间接的实现网页跳转，只不过，我们并不需要提交任何表单内容。再结合javascript脚本，可以对表单进行自 动提交。 <br><br>
+                        示例如下： <br><br>
+                        <code>&lt;form name=&quot;form1&quot; action= http://xfbbs.com/index.html method=&quot;get&quot;&gt; &lt;/form&gt; </code><br><br>
+                        <code>&lt;script language=&quot;javascript&quot;&gt; document.form1.submit() &lt;/script&gt;</code><br><br>
+                        其中form1名称任意，但二处form1应该统一。action中的url地址必须以文件名结尾，例如“action= http://xfbbs.com/ ”或“action= http://xfbbs.com/yule ”便是不规范写法。<br><br>
+                        method可以是get也可以是post，但根据我的经验，提交空表单时最好使用get。<br><br>
+                        众所周知，由于搜索引擎的蜘蛛程序是不会填写表单的，所以搜索引擎便无法识别通过这种方法实现的网页自动跳转。<br><br>
+                        第五种网页自动跳转方法：程序跳转法（response.redirect 、server.transfer） <br><br>
+                        每种程序都有各自的页面跳转方法，<br><br>
+                        例如asp中使用response.redirect 来进行跳转，跳转范例如下： response.redirect " http://xfbbs.com " <br><br>
+                        它的作用是，asp程序运行到该行代码后，会立即跳转到目标url地址中去。 在asp中，除了使用response.redirect 做跳转外，<br><br>
+                        还有一个跳转方法，用server.transfer进行跳转，跳转范例如下： response.redirect "/yule/tietu/index.html" <br><br>
+                        注意，这里的url地址，必须是站内地址，且url地址必须以文件名结尾，例如 response.redirect "/yule/tietu/" 便是错误用法。 <br><br>
+                        response.redirect和server.transfer都能实现网页自动跳转,<br><br>
+                        但二者也有不同之处，前者可以跳转到站内url，也可以跳转到站外url，而后者只能跳转到站内文件，且浏览器地址栏的url将保持不变。<br><br>
+                        server.transfer还有许多好处，这里不多详述，大家可在搜索引擎中查找它的更多资料。 <br><br>
+                        使用response.redirect 跳转虽然是在服务器端完成跳转的，但它最终是转换成html后在客户端执行的，因此，也能被搜索引擎识别，<br><br>
+                        过多的使用亦会被当作作弊处理。 如果是在同一网站内部的不同网页间跳转，建议使用server.transfer跳转，server.transfer肯定不会被搜索引擎视为作弊。<br><br>
+                        </p>
+                    </section>
+
+				</div>
+			</section>
+		
+		<!-- Footer -->
+			<section id="footer">
+                <p>
+                <a href="#" onClick="javascript :history.go(-1);">回到上页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://xmlcy.github.io">回到首页</a>
+                <p>
+				<ul class="copyright">
+					<li><a href="http://www.beian.miit.gov.cn" target="_blank">赣ICP备190133545</a></li>
+				</ul>
+			</section>
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+	</body>
+</html>

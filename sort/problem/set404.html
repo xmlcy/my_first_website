@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<!--
+
+-->
+<html>
+	<head>
+		<title>个人知识记录@怎么设置404？</title>
+        <link rel='icon' href='../../images/pic.ico ' type=‘image/x-ico’ /> <!-- 头部小图标 -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- One -->
+			<section id="one" class="main style1">
+				<div class="container">
+					<header class="major special">
+						<h2>怎么设置404？</h2>
+					</header>
+
+					<section>
+						<p>
+                        404页面的目的是：告诉浏览者其所请求的页面不存在或链接错误，同时引导用户使用网站其他页面而不是关闭窗口离开。很多开源系统包括CMS系统、Blog系统等不提供404页面或提供的404页面并未达到SEO的要求，这让网站的权威性大打折扣。那么404页面该达到怎么样的效果才符合SEO要求？<br><br>
+                        搜索引擎通过HTTP状态码来识别网页的状态.<br><br>
+                       当搜索引擎获得了一个错误链接时，网站应该返回404状态码，告诉搜索引擎放弃对该链接的索引。而如果返回200或302状态码，搜索引擎就会为该链接建立索引，这导致大量不同的链接指向了相同的网页内容。结果是，搜索引擎对该网站的信任度大幅降低。很多网站存在这个问题：404页面返回的是200或302状态码而不是404状态码。<br><br>
+                        正确建立404页面的方法是：（仅适合Apache服务器）<br><br>
+                        在.htaccess 文件中加入代码：<br><br>
+                        <code>ErrorDocument 404/Error.html</code><br><br>
+                        建立一个简单的html404页面命名 Error.html<br><br>
+                        把 Error.html放置在网站根目录<br><br>
+                        注意：<br><br>
+                        1、不要将404错误直接转向到网站首页，这将导致首页不被收录；<br><br>
+                        2、/Error.html 前面不要带主域名，否则返回的状态码是302或200状态码。
+                        </p>
+                    </section>
+
+				</div>
+			</section>
+		
+		<!-- Footer -->
+			<section id="footer">
+                <p>
+                <a href="#" onClick="javascript :history.go(-1);">回到上页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://xmlcy.github.io">回到首页</a>
+                <p>               
+                <ul class="copyright">
+					<li><a href="http://www.beian.miit.gov.cn" target="_blank">赣ICP备190133545</a></li>
+				</ul>
+			</section>
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+	</body>
+</html>
