@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<style type="text/css">
+    body {
+        padding: 0;
+        margin: 0;
+        background: black;
+    }
+    #canvas {
+        background: white;
+        margin: 100px 0 0 300px;
+    }
+    #canvas>span {
+        color: white;
+        font-size: 14px;
+    }
+</style>
+<body>
+    <canvas id="canvas" width="600" height="500">
+    <span>您的浏览器不支持</span>
+</canvas>
+</body>
+</html>
+<script type="text/javascript">
+    /*获取绘制环境*/
+    var oc = $('#canvas')[0];
+    var canvas = oc.getContext('2d');    
+    /*偏移*/
+    canvas.translate(200, 200);
+    var num = 0, multiple = 1, value = 1;
+    setInterval(function(){
+        num++;
+        if(multiple == 100 || multiple == 0){
+            value *= -1;
+        }
+        multiple += value;
+        /*局面canvas的起始点*/
+         canvas.save(); 
+         /*图形倍数(横向放大倍数,纵向放大倍数)*/
+         canvas.scale(multiple*1/50, multiple*1/50);
+         /*清理屏幕由于圆点被偏移,画布的坐标也跟着发生偏移*/
+        canvas.clearRect(-150, -150, oc.width, oc.height); 
+        /*旋转弧度*/
+        canvas.rotate(num*Math.PI/180);
+        /*偏移旋转中心*/
+        canvas.translate(-50, -50);
+        /*填充方块*/
+        canvas.fillRect(0, 0, 100, 100);
+        /*局面canvas的结束点*/
+        canvas.restore();
+    }, 30);
+</script>
